@@ -1,6 +1,5 @@
 {
 	"name": "react-express-ts-template",
-	"private": "true",
 	"workspaces": [
 		"packages/*"
 	],
@@ -10,7 +9,9 @@
 	"devDependencies": {
 		"concurrently": "^6.3.0",
 		"cz-conventional-changelog": "3.3.0",
-		"lerna": "^4.0.0"
+		"eslint": "^8.0.1",
+		"lerna": "^4.0.0",
+		"typescript": "^4.4.4"
 	},
 	"config": {
 		"commitizen": {
@@ -20,9 +21,11 @@
 	"scripts": {
 		"client": "yarn workspace @react-express-ts-template/client",
 		"server": "yarn workspace @react-express-ts-template/server",
+		"build": "concurrently \"yarn server build\" \"yarn client build\"",
 		"start": "concurrently \"yarn server start\" \"yarn client serve\"",
 		"start-watch": "concurrently \"yarn server start-watch\" \"yarn client start\" \"yarn server build-watch\"",
 		"start-watch-debug": "concurrently \"yarn server start-watch-debug\" \"yarn client start\" \"yarn server build-watch\"",
 		"release": "lerna version --conventional-commits --create-release github"
-	}
+	},
+	"packageManager": "yarn@3.0.2"
 }

@@ -3,7 +3,12 @@
 		"browser": true,
 		"es2021": true
 	},
-	"extends": ["react-app", "react-app/jest", "plugin:@typescript-eslint/recommended"],
+	"extends": [
+		"react-app",
+		"react-app/jest",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -12,12 +17,12 @@
 		"ecmaVersion": 2015,
 		"sourceType": "module"
 	},
-	"plugins": ["react", "@typescript-eslint"],
+	"plugins": ["react", "jest", "@typescript-eslint"],
 	"rules": {
-		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "single"],
-		"semi": ["error", "always"]
+		"semi": ["error", "always"],
+		"@typescript-eslint/explicit-module-boundary-types": "off"
 	}
 }
